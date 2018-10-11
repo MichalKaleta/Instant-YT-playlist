@@ -1,0 +1,13 @@
+@import "_styles/variables.scss";
+@import "_styles/mixins.scss";
+
+.searchbar {
+  &__search-input {
+    margin: $space-tiny 0;
+    border-radius: 0 !important;
+  }
+
+  &__list {
+    @include flex-container(row, space-between, center);
+  }
+}

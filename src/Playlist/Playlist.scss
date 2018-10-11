@@ -1,0 +1,13 @@
+@import "_styles/variables.scss";
+@import "_styles/mixins.scss";
+
+.playlist {
+  &__header {
+    text-align: center;
+    padding: $space-tiny;
+    color: $color-secondary;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1em;
+  }
+}
