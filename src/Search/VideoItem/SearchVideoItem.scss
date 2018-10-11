@@ -1,0 +1,38 @@
+@import '_styles/variables.scss';
+@import '_styles/mixins.scss';
+
+.video-item{
+
+  display: flex;
+  height: 100px;
+  margin-bottom: $space-small;
+  border: 1px solid $color-secondary;
+  cursor: pointer;
+
+  &__description{
+    @include flex-container(column,space-between,center);
+    width: 66.666%;
+    padding: $space-tiny;
+    white-space: wrap; 
+    overflow: hidden;
+    text-overflow: ellipsis;   
+    
+    &-title{
+      overflow: hidden;
+      max-height: 80%;
+      margin-bottom: 0; 
+      font-size: $font-small;
+      font-weight: bold;
+    }
+
+    &-channel {
+      white-space: nowrap; 
+      overflow-x: hidden;
+      text-overflow: ellipsis;   
+      margin-bottom: 0; 
+      font-size: $font-tiny;
+      color: $color-secondary;
+      font-weight: 600;
+    }
+  }
+}

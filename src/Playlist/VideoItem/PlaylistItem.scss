@@ -1,0 +1,11 @@
+@import "_styles/variables.scss";
+@import "_styles/mixins.scss";
+
+.playlist-item {
+  margin: 0.5%;
+  cursor: pointer;
+
+  &_active {
+    border: 2px solid lime;
+  }
+}
