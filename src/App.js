@@ -1,26 +1,46 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Container,Row,Col } from 'reactstrap';
+import SearchBar from 'searchBar/index.js';
+import Playlist from 'playlist/index.js'
+import Player from 'player/index.js'
+import './App.scss';
 
 class App extends Component {
+  state={
+    playlist:[]
+  }
+
+  addToPlaylist=(videoItem)=>{
+    this.setState(prevState=>({
+        playlist: [...prevState.playlist, videoItem]
+    }))
+  }
+  
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+      <Container fluid className="app">
+        <header className="app-header">
+          aaaaaa
         </header>
-      </div>
+        <Row>
+          <Col sm={8}>
+            <div>
+              <Player />
+            </div>
+            <div>
+              <Playlist 
+                playlist={this.state.playlist}
+              />
+            </div>
+          </Col>
+          <Col sm={4}>
+            <SearchBar 
+              addToPlaylist={this.addToPlaylist}
+            />
+          </Col>
+        </Row> 
+      </Container>
     );
   }
 }
