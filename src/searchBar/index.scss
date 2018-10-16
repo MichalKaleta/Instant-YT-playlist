@@ -1,0 +1,11 @@
+@import '_styles/variables.scss';
+
+.searchbar{
+
+    &__search-input{
+      margin-bottom: $space-small;
+      border-radius:0 !important; 
+    }
+
+ 
+}
