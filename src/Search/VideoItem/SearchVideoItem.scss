@@ -2,17 +2,36 @@
 @import "_styles/mixins.scss";
 
 .search-item {
+  position: relative;
   display: flex;
   flex-direction: column;
   width: 19.5%;
   margin-bottom: $space-small;
-  //  border: 1px solid $color-secondary;
   background-color: black;
   cursor: pointer;
 
+  &__add-overlay {
+    @include flex-container(row, center, center);
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: 0.14s opacity;
+  }
+  &__add-icon {
+    height: 50%;
+    align-self: center;
+  }
+  &:hover &__add-overlay {
+    opacity: 1;
+  }
+
   &__description {
     @include flex-container(column, space-between, center);
-    padding: 4px;
+    padding: 0 4px;
 
     &-title {
       overflow: hidden;

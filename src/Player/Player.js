@@ -9,11 +9,15 @@ const Player = ({ setNextVideo, currentVideoId }) => (
         height: "100%",
         width: "100%",
         playerVars: {
-          autoplay: 1
+          autoplay: 1,
+          modestbranding: 1,
+          color: "white",
+          rel: 0
         }
       }}
       videoId={currentVideoId}
       onEnd={setNextVideo}
+      onError={setNextVideo}
     />
   </div>
 );

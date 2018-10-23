@@ -2,11 +2,16 @@
 @import "_styles/mixins.scss";
 
 .searchbar {
-  &__search-input {
+  &__search-input.form-control {
     margin: $space-tiny 0;
+    border: 1px solid $color-secondary;
     border-radius: 0 !important;
+    background-color: $color-background-2;
+    &:focus {
+      background-color: $color-background-2;
+      box-shadow: 0 0 0 0.2em rgba(0, 255, 125, 0.25);
+    }
   }
-
   &__list {
     @include flex-container(row, space-between, center);
   }
