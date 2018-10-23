@@ -34,10 +34,14 @@ class App extends Component {
   };
 
   setVideo = requestedVideoIndex => {
+    const { playlist } = this.state;
+    const id = playlist[requestedVideoIndex]
+      ? playlist[requestedVideoIndex].id
+      : "stop";
     this.setState({
       currentVideo: {
         index: requestedVideoIndex,
-        id: this.state.playlist[requestedVideoIndex].id
+        id
       }
     });
   };
@@ -46,9 +50,25 @@ class App extends Component {
     const nextIndex = this.state.currentVideo.index + 1;
     if (this.state.playlist[nextIndex]) {
       this.setVideo(nextIndex);
-    } else {
+    } else if (this.state.playlist[0]) {
       this.setVideo(0);
+    } else {
+      this.setVideo();
     }
+  };
+  removeFromPlaylist = index => {
+    const newPlaylist = [...this.state.playlist];
+    newPlaylist.splice(index, 1);
+    const currentVideo = { ...this.state.currentVideo };
+    if (index <= currentVideo.index && index > 0) {
+      currentVideo.id = newPlaylist[index - 1].id;
+      currentVideo.index--;
+    }
+
+    this.setState({
+      playlist: newPlaylist,
+      currentVideo
+    });
   };
 
   handleDragEnd = result => {
@@ -89,11 +109,12 @@ class App extends Component {
             />
             <SearchBar addToPlaylist={this.addToPlaylist} />
           </Col>
-          <Col sm={4} className="pl-0">
+          <Col sm={4} className="playlist-container">
             <Playlist
               playlist={this.state.playlist}
               currentIndex={this.state.currentVideo.index}
-              playVideo={this.setVideo}
+              play={this.setVideo}
+              remove={this.removeFromPlaylist}
               handleDragEnd={this.handleDragEnd}
             />
           </Col>

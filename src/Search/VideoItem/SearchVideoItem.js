@@ -1,4 +1,5 @@
 import React from "react";
+import plusIcon from "assets/plus.svg";
 import "./SearchVideoItem.scss";
 
 const SearchVideoItem = ({
@@ -24,6 +25,9 @@ const SearchVideoItem = ({
       className="search-item__thumbnail"
       src={thumbnails.default.url}
     />
+    <div className="search-item__add-overlay">
+      <img className="search-item__add-icon" src={plusIcon} />
+    </div>
     <div className="search-item__description">
       <p className="search-item__description-title">{title}</p>
       <p className="search-item__description-channel">{channelTitle}</p>

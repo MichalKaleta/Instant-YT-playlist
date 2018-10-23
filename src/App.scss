@@ -1,9 +1,8 @@
-@import '_styles/variables.scss' ;
+@import "_styles/variables.scss";
 
 .app {
   background-color: $color-background;
   color: $color-primary;
   min-height: 100vh;
+  padding-top: $space-small;
 }
-
-

@@ -3,11 +3,32 @@
 
 .playlist {
   &__header {
+    position: relative;
     text-align: center;
     padding: $space-tiny;
+    background-color: lighten($color-background-2, 0%);
     color: $color-secondary;
-    font-weight: 800;
+    font-weight: 600;
+    font-size: 1rem;
     text-transform: uppercase;
-    letter-spacing: 1em;
+    letter-spacing: 1rem;
+    box-shadow: 0 5px 25px black;
+  }
+  &__list {
+    @include flex-container(row, center, flex-start, wrap);
+    height: calc(100vh - 50px);
+    overflow: auto;
+    padding-top: $space-tiny;
+    border: 1px solid $color-background-2;
+    border-width: 0 1px;
+    &::-webkit-scrollbar {
+      width: 4px;
+    }
+    &::-webkit-scrollbar-track {
+      background: $color-dark;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: $color-green;
+    }
   }
 }
