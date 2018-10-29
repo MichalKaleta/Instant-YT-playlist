@@ -2,17 +2,54 @@
 @import "_styles/mixins.scss";
 
 .searchbar {
-  &__search-input.form-control {
-    margin: $space-tiny 0;
-    border: 1px solid $color-secondary;
-    border-radius: 0 !important;
-    background-color: $color-background-2;
-    &:focus {
-      background-color: $color-background-2;
-      box-shadow: 0 0 0 0.2em rgba(0, 255, 125, 0.25);
+  &__search-input {
+    &.form-control {
+      display: inline;
+      margin: $space-tiny 0;
+    }
+    &::placeholder {
+      color: inherit;
+    }
+    &_term {
+      width: 80%;
+    }
+    &_country {
+      width: calc(20% - 10px);
+      margin-left: $space-tiny !important;
     }
   }
+
+  &__list-wrapper {
+    @include flex-container(row, center, flex-start);
+    position: relative;
+  }
   &__list {
-    @include flex-container(row, space-between, center);
+    @include flex-container(row, space-between, flex-start);
+    display: inline-flex;
+
+    position: relative;
+    width: 95%;
+    height: 185px;
+  }
+
+  &__nav {
+    position: absolute;
+    z-index: 1;
+    cursor: pointer;
+    top: calc(50% - 30px);
+
+    &_prev {
+      left: -24px;
+    }
+    &_next {
+      right: -24px;
+    }
+  }
+  &__nav-icon {
+    height: 60px;
+    filter: drop-shadow(5px 5px 5px black);
+    &:hover {
+      filter: hue-rotate(-18deg);
+    }
   }
 }

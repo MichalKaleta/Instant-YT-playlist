@@ -1,4 +1,5 @@
 import React from "react";
+import TextTruncate from "react-text-truncate";
 import plusIcon from "assets/plus.svg";
 import "./SearchVideoItem.scss";
 
@@ -29,7 +30,9 @@ const SearchVideoItem = ({
       <img className="search-item__add-icon" src={plusIcon} />
     </div>
     <div className="search-item__description">
-      <p className="search-item__description-title">{title}</p>
+      <p className="search-item__description-title">
+        <TextTruncate line={3} truncateText="…" text={title} />
+      </p>
       <p className="search-item__description-channel">{channelTitle}</p>
     </div>
   </li>

@@ -2,20 +2,49 @@
 @import "_styles/mixins.scss";
 
 .playlist {
-  &__header {
-    position: relative;
-    text-align: center;
-    padding: $space-tiny;
-    background-color: lighten($color-background-2, 0%);
-    color: $color-secondary;
-    font-weight: 600;
-    font-size: 1rem;
-    text-transform: uppercase;
-    letter-spacing: 1rem;
-    box-shadow: 0 5px 25px black;
+  .menu {
+    .icon-bar {
+      width: 22px;
+      height: 2px;
+      background-color: $color-primary;
+      display: block;
+      transition: all 0.2s;
+      margin-top: 4px;
+    }
+
+    .navbar-toggler {
+      border: none;
+      padding: 0;
+      &:focus {
+        outline: 0;
+      }
+      .top-bar {
+        transform: rotate(45deg);
+        transform-origin: 10% 10%;
+      }
+      .middle-bar {
+        opacity: 0;
+      }
+      .bottom-bar {
+        transform: rotate(-45deg);
+        transform-origin: 10% 90%;
+      }
+      &.collapsed {
+        .top-bar {
+          transform: rotate(0);
+        }
+        .middle-bar {
+          opacity: 1;
+        }
+        .bottom-bar {
+          transform: rotate(0);
+        }
+      }
+    }
   }
+
   &__list {
-    @include flex-container(row, center, flex-start, wrap);
+    @include flex-container(column, flex-start, center, nowrap);
     height: calc(100vh - 50px);
     overflow: auto;
     padding-top: $space-tiny;
