@@ -24,7 +24,7 @@ class Playlist extends Component {
   state = {
     isMenuOpen: false,
     isSaveModalOpen: false,
-    isLoadModalOpen: true,
+    isLoadModalOpen: false,
     playlistName: ""
   };
 
