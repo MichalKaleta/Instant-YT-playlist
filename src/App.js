@@ -13,6 +13,12 @@ class App extends Component {
       index: null
     }
   };
+
+  componentDidMount() {
+    if (localStorage.defaultPlaylist) {
+      this.loadPlaylist("defaultPlaylist");
+    }
+  }
   componentDidUpdate(prevProps, prevState) {
     if (
       prevState.playlist !== this.state.playlist &&
@@ -27,6 +33,11 @@ class App extends Component {
       });
     }
   }
+
+  loadPlaylist = playlistName => {
+    const playlist = JSON.parse(localStorage.getItem(playlistName));
+    this.setState({ playlist });
+  };
   addToPlaylist = videoItem => {
     this.setState(prevState => ({
       playlist: [...prevState.playlist, videoItem]
@@ -45,7 +56,12 @@ class App extends Component {
       }
     });
   };
-
+  saveDefaultPlaylist = () => {
+    localStorage.setItem(
+      "defaultPlaylist",
+      JSON.stringify(this.state.playlist)
+    );
+  };
   setNextVideo = () => {
     const nextIndex = this.state.currentVideo.index + 1;
     if (this.state.playlist[nextIndex]) {
@@ -116,6 +132,8 @@ class App extends Component {
               play={this.setVideo}
               remove={this.removeFromPlaylist}
               handleDragEnd={this.handleDragEnd}
+              saveDefaultPlaylist={this.saveDefaultPlaylist}
+              loadPlaylist={this.loadPlaylist}
             />
           </Col>
         </Row>

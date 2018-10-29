@@ -38,7 +38,7 @@ const PlaylistItem = ({
               remove(index);
             }}
           >
-            <img src={removeIcon} />
+            <img className="playlist-item__icon" src={removeIcon} />
           </div>
         </li>
       )}

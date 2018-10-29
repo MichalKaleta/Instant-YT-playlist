@@ -6,3 +6,10 @@
   min-height: 100vh;
   padding-top: $space-small;
 }
+.modal {
+  &-content {
+    background-color: lighten($color-dark, 14%);
+    color: $color-primary;
+    border-radius: 0;
+  }
+}
