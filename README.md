@@ -1,11 +1,12 @@
 # YT_Party
 Search for YouTube videos, add them to instant playlist and change it dynamicly without stoping videos in the same window<br />
-
--search for videos
--add and remove videos  
--rearrange playlist videos by dragging tjem with muse
--save playlist on local computer
-
+<ul>
+<li>search for videos</li>
+<li>add and remove videos  </li>
+<li>rearrange playlist videos by dragging tjem with muse</li>
+<li>save playlist on local computer</li>
+</ul>
+< br/>
 <img src='./public/screenshot2.png' />
 <br />
 
