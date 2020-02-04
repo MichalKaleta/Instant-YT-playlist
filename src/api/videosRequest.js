@@ -5,7 +5,7 @@ export const requestVideos = (term, code, pageToken) => {
   return axios
     .get(`https://www.googleapis.com/youtube/v3/search/`, {
       params: {
-        key: "AIzaSyD9d25lAYVOHhUtkUV5sKfTEmu25YQCRzo",
+        key:  "your you yube api key here",
         part: "snippet",
         type: "video",
         maxResults: 6,
