@@ -1,10 +1,12 @@
 # YT_PArty
 Make an instant youtube playlist and change it dynamicly without stoping videos <br />
-img src='./client/public/screenshot2.png' />
+<img src='./public/screenshot2.png' />
 <br />
 
-<b>INSATLL</b><br />
-<code>npm install</code> in both <code> ./ and ./client </code>
+<b>install packages</b><br />
+<code>npm install</code>
 
-<b>development server</b> on localhost:3000 <br />
-<code> npm run serve </code> 
+<b>run development server</b> on localhost:3000 <br />
+<code> npm run start </code> 
+<b>production</b><br />
+<code> npm run build </code> 
