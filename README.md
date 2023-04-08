@@ -6,7 +6,6 @@ Search for YouTube videos, add them to instant playlist and change it dynamicly 
 <li>rearrange playlist videos by dragging tjem with muse</li>
 <li>save playlist on local computer</li>
 </ul>
-< br/>
 <img src='./public/screenshot2.png' />
 <br />
 
